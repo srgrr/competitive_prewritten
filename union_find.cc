@@ -25,7 +25,6 @@ struct union_find {
   }
 
   void join(int u, int v) {
-    if(u>v) swap(u, v);
     g[rep(u)] = rep(v);
   }
 

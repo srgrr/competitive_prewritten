@@ -26,12 +26,10 @@ struct union_find {
   }
 
   int count(int u) {
-    if(g[u] == u) return k[u];
-    return g[u] = count(g[u]);
+    return k[rep(u)];
   }
 
   void join(int u, int v) {
-    if(u>v) swap(u, v);
     int ru = rep(u), rv = rep(v);
     if(ru != rv) {
       k[rv] += ru;
