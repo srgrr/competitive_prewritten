@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct primefield {
+struct sieve {
   vector< bool > is_prime;
   vector< int > primes;
-  primefield(int N) {
+  sieve(int N) {
     is_prime = vector< bool >(N, true);
     is_prime[0] = is_prime[1] = false;
     for(int i = 2; i < N; ++i) {
@@ -22,7 +22,7 @@ struct primefield {
 int main() {
   int N;
   cin >> N;
-  primefield pf(N);
+  sieve pf(N);
   for(int x : pf.primes) {
     cout << x << " ";
   }
