@@ -11,8 +11,8 @@ struct vertex {
 
 
 void dfs(vector< vertex >& g, vi& path, int root, int lv = 0) {
-  for(int step = 0; lv - (1<<step) >= 0; ++step) {
-    g[root].logparents.push_back(path[lv - (1<<step)]);
+  for(int step = 0; lv - (1 << step) >= 0; ++step) {
+    g[root].logparents.push_back(path[lv - (1 << step)]);
   }
   path[lv] = root;
   g[root].depth = lv;

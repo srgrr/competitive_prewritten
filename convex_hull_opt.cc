@@ -41,16 +41,20 @@ struct convex_hull_opt {
 
 	pair<ll, int> query(ll x) {
 		if(hull.size() == 1) return {hull[0].eval(x), 0ll};
-		int l = 0, r = int(hull.size()-1);
+		int l = 0, r = int(hull.size() - 1);
 		pair<ll, int> ret(0, 0);
-		for(int i=0; i<30; ++i) {
-			int h = (l+r)/2;
+		for(int i=0; i < 30; ++i) {
+			int h = (l + r) / 2;
 			ll fh  = hull[h].eval(x);
-			ll fh1 = hull[h+1].eval(x);
-			if(fh <= fh1) l = h;
-			else r = h;
+			ll fh1 = hull[h + 1].eval(x);
+			if(fh <= fh1) {
+        l = h;
+      }
+			else {
+        r = h;
+      }
 			ret = max(ret, {fh, h});
-			ret = max(ret, {fh1, h+1});
+			ret = max(ret, {fh1, h + 1});
 		}
 		return ret;
 	}

@@ -7,15 +7,15 @@ const int maxn = 1e5 + 9;
 	INDICES START AT 1 HERE!
 */
 
-
+template< typename T >
 struct fenwick {
 
   int n;
-  vector< ll > tree;
+  vector< T > tree;
 
   fenwick(int _n) {
     n = _n;
-    tree = vector< ll >(n+1);
+    tree = vector< T >(n + 1);
   }
 
   void insert(int pos, ll val) {
@@ -41,7 +41,7 @@ struct fenwick {
 };
 
 int main() {
-	fenwick f(100);
+	fenwick< ll > f(100);
   for(int i=1; i<=100; ++i) f.insert(i, i);
   cout << f.prefix(10) << " " << f.prefix(100) << endl;
 }

@@ -6,7 +6,7 @@ using vvi = vector<vi>;
 using vll = vector<ll>;
 using vvll = vector<vll>;
 const int maxn = 1e5 + 9;
-const int maxt = 1<<21;
+const int maxt = 1 << 21;
 
 struct query {
   char type;
@@ -15,17 +15,18 @@ struct query {
 
 query queries[maxn];
 
+template< typename T >
 struct lazy_segment_tree {
   int n;
-  vector< double > tree, pending;
+  vector< T > tree, pending;
 
   void push_flag(int l, int r, int id) {
-    tree[id] += double(r - l + 1)*pending[id];
+    tree[id] += T(r - l + 1)*pending[id];
     if(l<r) {
-      pending[2*id] += pending[id];
-      pending[2*id + 1] += pending[id];
+      pending[2 * id] += pending[id];
+      pending[2 * id + 1] += pending[id];
     }
-    pending[id] = 0.0;
+    pending[id] = T(0.0);
   }
 
   void add(int ql, int qr, int l, int r, double val, int id) {
@@ -36,32 +37,32 @@ struct lazy_segment_tree {
       return;
     }
     if(qr < l || r < ql) return;
-    int h = (l+r)/2;
-    add(ql, qr, l, h, val, 2*id),
-    add(ql, qr, h+1, r, val, 2*id + 1);
-    tree[id] = tree[2*id] + tree[2*id + 1];
+    int h = (l + r) / 2;
+    add(ql, qr, l, h, val, 2 * id),
+    add(ql, qr, h + 1, r, val, 2 * id + 1);
+    tree[id] = tree[2 * id] + tree[2 * id + 1];
   }
 
   void add(int ql, int qr, double val) {
-    add(ql, qr, 0, n-1, val, 1);
+    add(ql, qr, 0, n - 1, val, 1);
   }
 
-  double get(int ql, int qr, int l, int r, int id) {
+  T get(int ql, int qr, int l, int r, int id) {
     push_flag(l, r, id);
     if(ql <= l && qr >= r) return tree[id];
     if(qr <  l || r  < ql) return 0.0;
-    int h = (l+r)/2;
-    return get(ql, qr, l, h, 2*id) + get(ql, qr, h+1, r, 2*id + 1);
+    int h = (l + r) / 2;
+    return get(ql, qr, l, h, 2 * id) + get(ql, qr, h+1, r, 2 * id + 1);
   }
 
-  double get(int ql, int qr) {
-    return get(ql, qr, 0, n-1, 1);
+  T get(int ql, int qr) {
+    return get(ql, qr, 0, n - 1, 1);
   }
 
-  lazy_segment_tree(int N, int T) {
-    n = N;
-    tree = vector< double >(T, 0.0);
-    pending = vector< double >(T, 0.0);
+  lazy_segment_tree(int _N, int _T) {
+    n = _N;
+    tree = vector< T >(_T, 0.0);
+    pending = vector< T >(_T, 0.0);
   }
 };
 
@@ -92,7 +93,7 @@ int main() {
     for(double x : number_track) {
       compressed[x] = cur_index++;
     }
-    lazy_segment_tree A(cur_index, maxt), B(cur_index, maxt);
+    lazy_segment_tree< double > A(cur_index, maxt), B(cur_index, maxt);
     for(int i=0; i<n; ++i) {
       query& q = queries[i];
         if(q.type == 'A') {
