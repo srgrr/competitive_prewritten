@@ -14,7 +14,7 @@ struct union_find {
   union_find(int _n) {
     n = _n;
     g = vector< int >(n);
-    for(int i=0; i<n; ++i) {
+    for(int i = 0; i < n; ++i) {
       g[i] = i;
     }
   }
@@ -36,7 +36,7 @@ int main() {
   while(cin >> n >> m) {
     union_find uf(n);
     int ans = n;
-    for(int i=0; i<m; ++i) {
+    for(int i=0; i < m; ++i) {
       if(i>0) cout << ' ';
       int u, v; cin >> u >> v;
       if(uf.rep(u) != uf.rep(v)) --ans, uf.join(u, v);

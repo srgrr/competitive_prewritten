@@ -15,7 +15,7 @@ struct union_find {
     n = _n;
     g = vector< int >(n);
     k = vector< int >(n, 1);
-    for(int i=0; i<n; ++i) {
+    for(int i = 0; i < n; ++i) {
       g[i] = i;
     }
   }
