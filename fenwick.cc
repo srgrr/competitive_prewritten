@@ -25,8 +25,8 @@ struct fenwick {
     }
   }
 
-  ll prefix(int pos) {
-    ll ret = 0;
+  T prefix(int pos) {
+    T ret = 0;
     while(pos > 0) {
       ret += tree[pos];
       pos -= (pos & -pos);
@@ -34,7 +34,7 @@ struct fenwick {
     return ret;
   }
 
-  ll intsum(int ql, int qr) {
+  T intsum(int ql, int qr) {
     return prefix(qr) - prefix(ql - 1);
   }
 
