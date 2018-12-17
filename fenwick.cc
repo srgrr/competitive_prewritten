@@ -18,7 +18,7 @@ struct fenwick {
     tree = vector< T >(n + 1);
   }
 
-  void insert(int pos, ll val) {
+  void insert(int pos, T val) {
     while(pos <= n) {
        tree[pos] += val;
        pos += (pos & -pos);
