@@ -32,7 +32,7 @@ struct union_find {
   void join(int u, int v) {
     int ru = rep(u), rv = rep(v);
     if(ru != rv) {
-      k[rv] += ru;
+      k[rv] += k[ru];
       g[ru]  = rv;
     }
   }
