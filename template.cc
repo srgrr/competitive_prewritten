@@ -23,8 +23,7 @@ using vvll = vector<vll>;
 #define MULTI int t; cin >> t
 #define SINGLE int t = 1
 
-class Solution {
-public:
+struct Solution {
     Solution(int tc) {
 
     }
