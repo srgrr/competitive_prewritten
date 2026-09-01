@@ -2,31 +2,36 @@
 using namespace std;
 
 template< typename T >
-int get_index(T obj, vector< T >& indices ) {
-    return lower_bound(indices.begin(), indices.end(), obj) - indices.begin();
-}
+struct coordinate_compression {
+    vector< T > coords;
 
-template< typename T >
-vector< int > get_indices(vector< T >& objects, vector< T >& indices) {
-    vector< int > ret;
-    for(auto& a : objects) {
-        ret.push_back(get_index(a, indices));
+    coordinate_compression(vector< T > v) {
+        coords = v;
+        sort(coords.begin(), coords.end());
+        coords.erase(unique(coords.begin(), coords.end()), coords.end());
     }
-    return ret;
-}
 
-template< typename T >
-vector< T > compress_coordinates(vector< T > v) {
-    vector< T > ret(v);
-    sort( ret.begin(), ret.end() );
-    unique( ret.begin(), ret.end() );
-    return ret;
-}
+    int get_index(const T& obj) {
+        return lower_bound(coords.begin(), coords.end(), obj) - coords.begin();
+    }
+
+    vector< int > get_indices(const vector< T >& objects) {
+        vector< int > ret;
+        for(const auto& a : objects) {
+            ret.push_back(get_index(a));
+        }
+        return ret;
+    }
+
+    int size() {
+        return (int)coords.size();
+    }
+};
 
 int main() {
     vector< double > v = {3.0, 1.0, 2.0, 6.0};
-    auto cv = compress_coordinates(v);
-    for( auto x : get_indices(v, cv) ) {
+    coordinate_compression< double > cc(v);
+    for( auto x : cc.get_indices(v) ) {
         cout << x << endl;
     }
 }
