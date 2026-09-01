@@ -1,0 +1,14 @@
+.gitignore
+  h_44cd9a9c2fa5b5 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "800072450f7b6e1a9453fffc64a01a97fe033532",
+  "prompts": {},
+  "humans": {
+    "h_44cd9a9c2fa5b5": {
+      "author": "Sergio RG <sergio.guasch@archlet.ch>"
+    }
+  }
+}
