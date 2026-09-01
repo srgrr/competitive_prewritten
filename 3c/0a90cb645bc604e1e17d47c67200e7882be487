@@ -1,0 +1,44 @@
+scc.cc
+  s_ab023d728574e0::t_2c7555cdfe63e5 5-12,14,16,18-19,22-25,27-54,57-60,66-78
+coordinate_compression.cc
+  s_ab023d728574e0::t_34d87daedc799a 6,11-15,20-23,27-31
+fenwick.cc
+  s_ab023d728574e0::t_68a4def2ff9641 7,13-14,16-19,21-25,28-34,37-39,44-46
+sieve.cc
+  s_ab023d728574e0::t_d3f1fe3767d094 5-16,23-29
+fast_pow.cc
+  s_ab023d728574e0::t_addedc66070d0c 8-9,13-21,23-29,35-45,47,49-55,61-67,71-82,84,86,88-92
+lazy_segment_tree.cc
+  s_ab023d728574e0::t_967dbccb0b3582 51,72,85,91,97,105-107,111,114-118,127-128,141-142
+  s_ab023d728574e0::t_f5687e6b3c2b60 2-6,8-30,33-47,49,52-59,61-66,69-71,73-77,79-84,86-90,92-96,98-104,108-110,112,119-126,129-140,143-146,148
+  s_ab023d728574e0::t_71ba957a893c44 1
+union_find.cc
+  s_ab023d728574e0::t_48415f65e9c31a 7-8,12-19,22-25,27-29,34-45
+union_find_count.cc
+  s_ab023d728574e0::t_cb110bf2ecb547 7,11-20,23-26,28-30,32-37,43-54
+convex_hull_opt.cc
+  s_ab023d728574e0::t_37dd560802bb14 6-9,12-15,19,21-23,25-32,34-40,42-64
+binary_lifting.cc
+  s_ab023d728574e0::t_d60efa7fc09082 8-9,14-22,28-35,37-45,47,51-61,65-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "3c0a90cb645bc604e1e17d47c67200e7882be487",
+  "prompts": {},
+  "humans": {
+    "h_44cd9a9c2fa5b5": {
+      "author": "Sergio RG <sergio.guasch@archlet.ch>"
+    }
+  },
+  "sessions": {
+    "s_ab023d728574e0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "609ccbb5-936a-4089-a2f1-f4b78ff85e5e",
+        "model": "grok-4.6"
+      },
+      "human_author": "Sergio RG <sergio.guasch@archlet.ch>"
+    }
+  }
+}
