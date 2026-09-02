@@ -1,0 +1,25 @@
+strfunc.cc
+  s_ab023d728574e0::t_e2785225e52d34 1
+  s_ab023d728574e0::t_1716f5ce03a048 2-86
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "c0834b152f9ddc1652249513ec7261ab87e3028f",
+  "prompts": {},
+  "humans": {
+    "h_44cd9a9c2fa5b5": {
+      "author": "Sergio RG <sergio.guasch@archlet.ch>"
+    }
+  },
+  "sessions": {
+    "s_ab023d728574e0": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "609ccbb5-936a-4089-a2f1-f4b78ff85e5e",
+        "model": "grok-4.6"
+      },
+      "human_author": "Sergio RG <sergio.guasch@archlet.ch>"
+    }
+  }
+}
